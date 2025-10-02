@@ -41,23 +41,39 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Navigation -->
     <nav
-      class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-50 shadow-md"
+      class="fixed top-0 left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm z-40 shadow-md"
     >
       <div
         class="container mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <div class="font-['Pacifico'] text-2xl text-primary">Happiest Community</div>
+        <div class="font-['Pacifico'] text-2xl text-primary">
+          Happiest Community
+        </div>
         <div class="hidden md:flex space-x-8 items-center">
-          <div class="nav-item text-gray-800 font-medium active-nav">Home</div>
-          <div class="nav-item text-gray-800 font-medium">About</div>
-          <div class="nav-item text-gray-800 font-medium">Story</div>
-          <div class="nav-item text-gray-800 font-medium">Events</div>
-          <div class="nav-item text-gray-800 font-medium">Contact</div>
+          <a href="#home" class="nav-item text-gray-800 font-medium active-nav">
+            Home
+          </a>
+          <a href="#about" class="nav-item text-gray-800 font-medium">
+            About
+          </a>
+          <a href="#testimonials" class="nav-item text-gray-800 font-medium">
+            Story
+          </a>
+          <a
+            href="#community-events"
+            class="nav-item text-gray-800 font-medium"
+          >
+            Events
+          </a>
+          <a href="#contact" class="nav-item text-gray-800 font-medium">
+            Contact
+          </a>
+
           <button
             onclick="window.open('your-cv-link.pdf', '_blank')"
             class="bg-primary text-white px-6 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap button-3d group relative overflow-hidden"
@@ -68,11 +84,55 @@
             ></div>
           </button>
         </div>
-        <div class="md:hidden w-10 h-10 flex items-center justify-center">
+
+        <div
+          id="menu-toggle"
+          class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer z-40"
+        >
           <i class="ri-menu-line ri-lg"></i>
         </div>
       </div>
     </nav>
+
+    <!--Mobile view toggle page   -->
+    <div
+      id="mobile-sidebar"
+      class="fixed top-0 left-0 w-64 h-full bg-white shadow-xl z-40 transform -translate-x-full transition-transform duration-300 md:hidden border-r-2 border-pink-300"
+    >
+      <div class="p-6 space-y-6">
+        <h2
+          class="text-xl font-semibold text-primary mb-4 border-b border-pink-200 pb-2"
+        >
+          Menu
+        </h2>
+        <a
+          href="#home"
+          class="block text-primary font-medium hover:text-secondary transition-colors"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="block text-primary font-medium hover:text-secondary transition-colors"
+          >About</a
+        >
+        <a
+          href="#testimonials"
+          class="block text-primary font-medium hover:text-secondary transition-colors"
+          >Story</a
+        >
+        <a
+          href="#community-events"
+          class="block text-primary font-medium hover:text-secondary transition-colors"
+          >Events</a
+        >
+        <a
+          href="#contact"
+          class="block text-primary font-medium hover:text-secondary transition-colors"
+          >Contact</a
+        >
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <section
       id="home"
@@ -86,7 +146,8 @@
           <div class="md:w-1/2 mb-10 md:mb-0">
             <div>
               <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                Welcome to the <span class="shine-text">Happiest</span> Community 
+                Welcome to the
+                <span class="shine-text">Happiest</span> Community
               </h1>
             </div>
             <div>
@@ -116,7 +177,7 @@
                 class="absolute inset-4 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
               >
                 <img
-                  src="images/People Group Logo.png" 
+                  src="images/People Group Logo.png"
                   alt="Happiest Community"
                   class="w-full h-full object-cover"
                 />
@@ -134,7 +195,7 @@
             About the Community
           </h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
-            Get to know about the Happiest Community 
+            Get to know about the Happiest Community
           </p>
         </div>
         <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -144,10 +205,16 @@
                 Happiest Community
               </h3>
               <p class="text-gray-600 mb-6">
-                A global, community-driven initiative bringing together people from all countries, sectors, and backgrounds. We provide an open, inclusive space for connection, collaboration, and collective growth.
+                A global, community-driven initiative bringing together people
+                from all countries, sectors, and backgrounds. We provide an
+                open, inclusive space for connection, collaboration, and
+                collective growth.
               </p>
               <p class="text-gray-600 mb-6">
-                To build a world where kindness, connection, and growth are universally accessible and deeply valued by every individual, regardless of their background."Let’s grow happily, smartly, and globally."
+                To build a world where kindness, connection, and growth are
+                universally accessible and deeply valued by every individual,
+                regardless of their background."Let’s grow happily, smartly, and
+                globally."
               </p>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div class="flex items-center gap-3">
@@ -161,7 +228,7 @@
                     <p class="font-medium">happiestcommunity01@gmail.com</p>
                   </div>
                 </div>
-                </div>
+              </div>
               <div class="flex gap-4">
                 <a
                   href="https://www.linkedin.com/company/happiest-community"
@@ -205,502 +272,655 @@
       </div>
     </section>
 
-
-
-
-
-<!-- Community Events Section -->
-<section id="community-events" class="py-20 bg-gradient-to-b from-pink-50 to-white">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
-        Community Events
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Join inspiring events to learn, connect, and grow in your journey.
-      </p>
-    </div>
-
-    <!-- Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Event Card 1 -->
-      <div
-        id="security-event"
-        class="event-card parallax-tilt bg-white rounded-2xl shadow-xl overflow-hidden glow-effect border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
-      >
-        <div class="h-48 overflow-hidden">
-          <img
-            src="images/1358905.png"
-            alt="Security Event"
-            class="w-full h-full object-cover object-top"
-          />
+    <!-- Community Events Section -->
+    <section
+      id="community-events"
+      class="py-20 bg-gradient-to-b from-pink-50 to-white"
+    >
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
+            Community Events
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Join inspiring events to learn, connect, and grow in your journey.
+          </p>
         </div>
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-bold text-gray-800">
-              Security Event
-            </h3>
-            <div
-              class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
-            >
-              <i class="ri-shield-keyhole-line text-primary"></i>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Event Card 1 -->
+          <div
+            id="security-event"
+            class="event-card parallax-tilt bg-white rounded-2xl shadow-xl overflow-hidden glow-effect border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/1358905.png"
+                alt="Security Event"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-gray-800">Security Event</h3>
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+                >
+                  <i class="ri-shield-keyhole-line text-primary"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">
+                Security is not just protection — it’s the foundation of trust
+                and resilience. Stronger security today means a safer tomorrow.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Cybersecurity</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >NLP</span
+                >
+              </div>
+              <button
+                onclick="openEventModal('security-event')"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+              >
+                Apply to Attend
+              </button>
             </div>
           </div>
-          <p class="text-gray-600 mb-4">
-            Security is not just protection — it’s the foundation of trust and resilience.
-            Stronger security today means a safer tomorrow.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Cybersecurity</span>
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Python</span>
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">NLP</span>
-          </div>
-          <button
-            onclick="openEventModal('security-event')"
-            class="w-full bg-primary text-white px-4 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+
+          <!-- Event Card 2 -->
+          <div
+            id="ai-event"
+            class="event-card parallax-tilt bg-white rounded-2xl shadow-xl overflow-hidden glow-effect"
           >
-            Apply to Attend
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/a-few-words-about-artificial-intelligence-what-is-it.jpeg"
+                alt="Artificial Intelligence Event"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-gray-800">
+                  Artificial Intelligence
+                </h3>
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+                >
+                  <i class="ri-robot-line text-primary"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">
+                AI is not here to replace us, but to amplify human potential.
+                Explore the future of intelligence together.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Machine Learning</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Pandas</span
+                >
+              </div>
+              <button
+                onclick="openEventModal('ai-event')"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+              >
+                Apply to Attend
+              </button>
+            </div>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div
+            id="happiness-event"
+            class="event-card parallax-tilt bg-white rounded-2xl shadow-xl overflow-hidden glow-effect"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="images/360_F_484873483_hg1ofIdXbMha5lKEDG3hJBrwKh1oikTq.jpg"
+                alt="Happiest Life Event"
+                class="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-xl font-bold text-gray-800">Happiest Life</h3>
+                <div
+                  class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+                >
+                  <i class="ri-emotion-happy-line text-primary"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 mb-4">
+                The happiest people don’t have the best of everything, they just
+                make the best of everything.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Well-being</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Mindset</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                  >Happiness</span
+                >
+              </div>
+              <button
+                onclick="openEventModal('happiness-event')"
+                class="w-full bg-primary text-white px-4 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+              >
+                Apply to Attend
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Modal -->
+    <div
+      id="event-modal"
+      class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 z-50"
+    >
+      <div
+        class="bg-white rounded-lg p-8 w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+          <button
+            onclick="closeEventModal()"
+            class="text-gray-500 hover:text-gray-800 text-2xl"
+          >
+            &times;
           </button>
         </div>
+        <div id="modal-content" class="text-gray-600"></div>
       </div>
+    </div>
 
-      <!-- Event Card 2 -->
-      <div
-        id="ai-event"
-        class="event-card parallax-tilt bg-white rounded-2xl shadow-xl overflow-hidden glow-effect"
-      >
-        <div class="h-48 overflow-hidden">
-          <img
-            src="images/a-few-words-about-artificial-intelligence-what-is-it.jpeg"
-            alt="Artificial Intelligence Event"
-            class="w-full h-full object-cover object-top"
-          />
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-bold text-gray-800">
-              Artificial Intelligence
-            </h3>
-            <div
-              class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
-            >
-              <i class="ri-robot-line text-primary"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-4">
-            AI is not here to replace us, but to amplify human potential.  
-            Explore the future of intelligence together.
+    <!-- Community Benefits Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
+            Benefits of Our Global Community
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Together we connect, collaborate, and grow across borders,
+            industries, and cultures.
           </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Machine Learning</span>
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Python</span>
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Pandas</span>
-          </div>
-          <button
-            onclick="openEventModal('ai-event')"
-            class="w-full bg-primary text-white px-4 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Benefit 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
           >
-            Apply to Attend
-          </button>
-        </div>
-      </div>
-
-      <!-- Event Card 3 -->
-      <div
-        id="happiness-event"
-        class="event-card parallax-tilt bg-white rounded-2xl shadow-xl overflow-hidden glow-effect"
-      >
-        <div class="h-48 overflow-hidden">
-          <img
-            src="images/360_F_484873483_hg1ofIdXbMha5lKEDG3hJBrwKh1oikTq.jpg"
-            alt="Happiest Life Event"
-            class="w-full h-full object-cover object-top"
-          />
-        </div>
-        <div class="p-6">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-bold text-gray-800">
-              Happiest Life
-            </h3>
             <div
-              class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
             >
-              <i class="ri-emotion-happy-line text-primary"></i>
+              <i class="ri-global-line text-primary ri-2x"></i>
             </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">
+              Global Connections
+            </h3>
+            <p class="text-gray-600">
+              Build meaningful relationships with people from diverse countries,
+              cultures, and sectors.
+            </p>
           </div>
-          <p class="text-gray-600 mb-4">
-            The happiest people don’t have the best of everything,  
-            they just make the best of everything.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Well-being</span>
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Mindset</span>
-            <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Happiness</span>
-          </div>
-          <button
-            onclick="openEventModal('happiness-event')"
-            class="w-full bg-primary text-white px-4 py-2 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap"
+          <!-- Benefit 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
           >
-            Apply to Attend
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Event Modal -->
-<div
-  id="event-modal"
-  class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 z-50"
->
-  <div
-    class="bg-white rounded-lg p-8 w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0"
-  >
-    <div class="flex justify-between items-center mb-4">
-      <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
-      <button onclick="closeEventModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-    </div>
-    <div id="modal-content" class="text-gray-600"></div>
-  </div>
-</div>
-
-
-
-<!-- Community Benefits Section -->
-<section class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
-        Benefits of Our Global Community
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Together we connect, collaborate, and grow across borders, industries, and cultures.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Benefit 1 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
-      >
-        <div
-          class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
-        >
-          <i class="ri-global-line text-primary ri-2x"></i>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2">Global Connections</h3>
-        <p class="text-gray-600">
-          Build meaningful relationships with people from diverse countries, cultures, and sectors.
-        </p>
-      </div>
-      <!-- Benefit 2 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
-      >
-        <div
-          class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
-        >
-          <i class="ri-team-line text-primary ri-2x"></i>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2">Collaboration</h3>
-        <p class="text-gray-600">
-          Partner on impactful projects and initiatives that create positive change worldwide.
-        </p>
-      </div>
-      <!-- Benefit 3 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
-      >
-        <div
-          class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
-        >
-          <i class="ri-book-open-line text-primary ri-2x"></i>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2">Learning & Growth</h3>
-        <p class="text-gray-600">
-          Share knowledge, gain insights, and develop skills through global perspectives.
-        </p>
-      </div>
-      <!-- Benefit 4 -->
-      <div
-        class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
-      >
-        <div
-          class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
-        >
-          <i class="ri-heart-line text-primary ri-2x"></i>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800 mb-2">Inclusive Support</h3>
-        <p class="text-gray-600">
-          Be part of a kind, welcoming space that empowers and uplifts everyone equally.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-    <section id="supporters" class="py-20 bg-gradient-to-b from-white to-pink-50">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
-         Meet out World Wide Supporters 
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Meet out Gllobal Organizations and partners supporting us
-      </p>
-    </div>
-
-    <!-- Cards Wrapper -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      <!-- Supporter 1 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <!-- Outer glowing pulse ring -->
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"></div>
-            <!-- Inner square image -->
-            <div class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="Supporters/freewill.jpg" alt="Company 1" class="w-full h-full object-cover">
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
+            >
+              <i class="ri-team-line text-primary ri-2x"></i>
             </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Collaboration</h3>
+            <p class="text-gray-600">
+              Partner on impactful projects and initiatives that create positive
+              change worldwide.
+            </p>
+          </div>
+          <!-- Benefit 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
+            >
+              <i class="ri-book-open-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">
+              Learning & Growth
+            </h3>
+            <p class="text-gray-600">
+              Share knowledge, gain insights, and develop skills through global
+              perspectives.
+            </p>
+          </div>
+          <!-- Benefit 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border border-pink-100 hover:border-primary transition-all hover:shadow-xl"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4"
+            >
+              <i class="ri-heart-line text-primary ri-2x"></i>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">
+              Inclusive Support
+            </h3>
+            <p class="text-gray-600">
+              Be part of a kind, welcoming space that empowers and uplifts
+              everyone equally.
+            </p>
           </div>
         </div>
-        <h3 class="text-lg font-bold text-gray-800">FreeWill Technologies</h3>
-        <p class="text-sm text-gray-500 mb-3">Technology Partner</p>
-        <p class="text-gray-600 mb-4">
-          "Proud supporter of innovation and data-driven solutions."
-        </p>
-        <a href="https://www.freewilltech.in" target="_blank" 
-           class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition">
-          Visit Website
-        </a>
       </div>
+    </section>
 
-      
-       <!-- Supporter 2 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="Supporters/roza.jpg" alt="Company 3" class="w-full h-full object-cover">
+    <section
+      id="supporters"
+      class="py-20 bg-gradient-to-b from-white to-pink-50"
+    >
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
+            Meet out World Wide Supporters
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Meet out Gllobal Organizations and partners supporting us
+          </p>
+        </div>
+
+        <!-- Cards Wrapper -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Supporter 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <!-- Outer glowing pulse ring -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"
+                ></div>
+                <!-- Inner square image -->
+                <div
+                  class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="Supporters/freewill.jpg"
+                    alt="Company 1"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
+            <h3 class="text-lg font-bold text-gray-800">
+              FreeWill Technologies
+            </h3>
+            <p class="text-sm text-gray-500 mb-3">Technology Partner</p>
+            <p class="text-gray-600 mb-4">
+              "Proud supporter of innovation and data-driven solutions."
+            </p>
+            <a
+              href="https://www.freewilltech.in"
+              target="_blank"
+              class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
+            >
+              Visit Website
+            </a>
+          </div>
+
+          <!-- Supporter 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="Supporters/roza.jpg"
+                    alt="Company 3"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Roza Solutions</h3>
+            <p class="text-sm text-gray-500 mb-3">Research Partner</p>
+            <p class="text-gray-600 mb-4">
+              "Dedicated to driving collaboration and progress."
+            </p>
+            <a
+              href="https://www.rozasolutions.in"
+              target="_blank"
+              class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
+            >
+              Visit Website
+            </a>
+          </div>
+
+          <!-- Supporter 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="Supporters/zeropoint.png"
+                    alt="Company 3"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">ZeroPoint Sec</h3>
+            <p class="text-sm text-gray-500 mb-3">Research Partner</p>
+            <p class="text-gray-600 mb-4">
+              "Dedicated to driving collaboration and progress."
+            </p>
+            <a
+              href="https://zeropointsec.in"
+              target="_blank"
+              class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
+            >
+              Visit Website
+            </a>
+          </div>
+
+          <!-- Supporter 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="Supporters/rest.jpg"
+                    alt="Company 4"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">REST Automation</h3>
+            <p class="text-sm text-gray-500 mb-3">Research Partner</p>
+            <p class="text-gray-600 mb-4">
+              "Dedicated to driving collaboration and progress."
+            </p>
+            <a
+              href=""
+              target="_blank"
+              class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition"
+            >
+              Visit Website
+            </a>
           </div>
         </div>
-        <h3 class="text-lg font-bold text-gray-800">Roza Solutions</h3>
-        <p class="text-sm text-gray-500 mb-3">Research Partner</p>
-        <p class="text-gray-600 mb-4">
-          "Dedicated to driving collaboration and progress."
-        </p>
-        <a href="https://www.rozasolutions.in" target="_blank" 
-           class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition">
-          Visit Website
-        </a>
       </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section
+      id="testimonials"
+      class="py-20 bg-gradient-to-b from-white to-pink-50"
+    >
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">People</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Meet out Global Team Member from all over the world
+          </p>
+        </div>
 
-      <!-- Supporter 3 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="Supporters/zeropoint.png" alt="Company 3" class="w-full h-full object-cover">
+        <!-- Cards Wrapper -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <!-- Outer glowing pulse ring -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <!-- Inner image circle -->
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/marianihill.jpeg"
+                    alt="Alice Johnson"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
+            <h3 class="text-lg font-bold text-gray-800">Marianihill A</h3>
+            <p class="text-sm text-gray-500 mb-3">AI Engineer</p>
+            <p class="text-gray-600">
+              "Working with you has been an amazing experience. Your expertise
+              in data science truly stands out."
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/monika.jpg"
+                    alt="Michael Lee"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Monika Samad</h3>
+            <p class="text-sm text-gray-500 mb-3">English Professional</p>
+            <p class="text-gray-600">
+              "Your innovative thinking and dedication have made a big
+              difference to our projects."
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/infant.jpg"
+                    alt="Sophia Brown"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Infant Steve</h3>
+            <p class="text-sm text-gray-500 mb-3">Founder of REST Automation</p>
+            <p class="text-gray-600">
+              "I appreciate your problem-solving mindset and the way you deliver
+              results with clarity."
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <!-- Outer glowing pulse ring -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <!-- Inner image circle -->
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/ajay.jpg"
+                    alt="Alice Johnson"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Ajay James</h3>
+            <p class="text-sm text-gray-500 mb-3">
+              FreeWill Technologies Founder & CEO
+            </p>
+            <p class="text-gray-600">
+              "Working with you has been an amazing experience. Your expertise
+              in data science truly stands out."
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/abdul.jpg"
+                    alt="Michael Lee"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Abdul Haium</h3>
+            <p class="text-sm text-gray-500 mb-3">
+              Roza Solutions Founder & CEO
+            </p>
+            <p class="text-gray-600">
+              "Your innovative thinking and dedication have made a big
+              difference to our projects."
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/muthu.jpg"
+                    alt="Sophia Brown"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Muthu Kumar</h3>
+            <p class="text-sm text-gray-500 mb-3">Full Stack Developer</p>
+            <p class="text-gray-600">
+              "I appreciate your problem-solving mindset and the way you deliver
+              results with clarity."
+            </p>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition"
+          >
+            <div class="flex justify-center mb-4">
+              <div class="relative w-48 h-48">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="team/dhivin.jpg"
+                    alt="Sophia Brown"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Dhivin</h3>
+            <p class="text-sm text-gray-500 mb-3">Founder of ZeroSec Point</p>
+            <p class="text-gray-600">
+              "I appreciate your problem-solving mindset and the way you deliver
+              results with clarity."
+            </p>
           </div>
         </div>
-        <h3 class="text-lg font-bold text-gray-800">ZeroPoint Sec</h3>
-        <p class="text-sm text-gray-500 mb-3">Research Partner</p>
-        <p class="text-gray-600 mb-4">
-          "Dedicated to driving collaboration and progress."
-        </p>
-        <a href="https://zeropointsec.in" target="_blank" 
-           class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition">
-          Visit Website
-        </a>
       </div>
-
-        <!-- Supporter 4 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition supporters-card">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-xl animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="Supporters/rest.jpg" alt="Company 4" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">REST Automation</h3>
-        <p class="text-sm text-gray-500 mb-3">Research Partner</p>
-        <p class="text-gray-600 mb-4">
-          "Dedicated to driving collaboration and progress."
-        </p>
-        <a href="" target="_blank" 
-           class="inline-block bg-pink-500 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-600 transition">
-          Visit Website
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<!-- Testimonials Section -->
-<section id="testimonials" class="py-20 bg-gradient-to-b from-white to-pink-50">
-  <div class="container mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold gradient-text mb-4 text-3d">
-        People
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Meet out Global Team Member from all over the world
-      </p>
-    </div>
-
-    <!-- Cards Wrapper -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      <!-- Card 1 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <!-- Outer glowing pulse ring -->
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <!-- Inner image circle -->
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/marianihill.jpeg" alt="Alice Johnson" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Marianihill A</h3>
-        <p class="text-sm text-gray-500 mb-3">AI Engineer</p>
-        <p class="text-gray-600">
-          "Working with you has been an amazing experience. Your expertise in data science truly stands out."
-        </p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/monika.jpg" alt="Michael Lee" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Monika Samad</h3>
-        <p class="text-sm text-gray-500 mb-3">English Professional</p>
-        <p class="text-gray-600">
-          "Your innovative thinking and dedication have made a big difference to our projects."
-        </p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/infant.jpg" alt="Sophia Brown" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Infant Steve</h3>
-        <p class="text-sm text-gray-500 mb-3">Founder of REST Automation</p>
-        <p class="text-gray-600">
-          "I appreciate your problem-solving mindset and the way you deliver results with clarity."
-        </p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <!-- Outer glowing pulse ring -->
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <!-- Inner image circle -->
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/ajay.jpg" alt="Alice Johnson" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Ajay James</h3>
-        <p class="text-sm text-gray-500 mb-3">FreeWill Technologies Founder & CEO</p>
-        <p class="text-gray-600">
-          "Working with you has been an amazing experience. Your expertise in data science truly stands out."
-        </p>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/abdul.jpg" alt="Michael Lee" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Abdul Haium</h3>
-        <p class="text-sm text-gray-500 mb-3">Roza Solutions Founder & CEO</p>
-        <p class="text-gray-600">
-          "Your innovative thinking and dedication have made a big difference to our projects."
-        </p>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/muthu.jpg" alt="Sophia Brown" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Muthu Kumar</h3>
-        <p class="text-sm text-gray-500 mb-3">Full Stack Developer</p>
-        <p class="text-gray-600">
-          "I appreciate your problem-solving mindset and the way you deliver results with clarity."
-        </p>
-      </div>
-       
-
-      <div class="bg-white rounded-2xl shadow-lg p-6 text-center border border-pink-100 hover:shadow-xl transition">
-        <div class="flex justify-center mb-4">
-          <div class="relative w-48 h-48">
-            <div class="absolute inset-0 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full animate-pulse"></div>
-            <div class="absolute inset-2 bg-white rounded-full shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
-              <img src="team/dhivin.jpg" alt="Sophia Brown" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-        <h3 class="text-lg font-bold text-gray-800">Dhivin </h3>
-        <p class="text-sm text-gray-500 mb-3">Founder of ZeroSec Point</p>
-        <p class="text-gray-600">
-          "I appreciate your problem-solving mindset and the way you deliver results with clarity."
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gradient-to-b from-white to-pink-50">
@@ -756,7 +976,7 @@
                   </div>
                   <div>
                     <h4 class="text-lg font-medium text-gray-800">Location</h4>
-                    <p class="text-gray-600"> Remote</p>
+                    <p class="text-gray-600">Remote</p>
                     <p class="text-sm text-gray-500 mt-1">
                       Open for remote opportunities
                     </p>
@@ -888,7 +1108,7 @@
           class="flex flex-col md:flex-row justify-between items-center mb-8"
         >
           <div class="font-['Pacifico'] text-3xl text-primary mb-4 md:mb-0">
-            Happiest Community 
+            Happiest Community
           </div>
           <div class="flex gap-6">
             <a
@@ -955,20 +1175,78 @@
       </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button
-      id="backToTop"
-      class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center transition-all z-50 opacity-0 invisible"
+    <div
+      id="chatbotPanel"
+      class="fixed bottom-28 right-8 w-80 h-96 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-pink-200 flex flex-col transform translate-y-4 scale-95 opacity-0 invisible transition-all duration-300 z-40"
     >
-      <i class="ri-arrow-up-line ri-lg"></i>
-    </button>
+      <!-- Header -->
+      <div
+        class="bg-gradient-to-r from-primary to-pink-400 text-white p-4 rounded-t-2xl flex justify-between items-center"
+      >
+        <h4 class="font-semibold tracking-wide">Fluent Assistant</h4>
+        <button
+          id="chatbotClose"
+          class="text-white hover:bg-white/20 p-1 rounded transition-colors duration-200"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages -->
+      <div
+        id="chatbotMessages"
+        class="flex-1 p-4 overflow-y-auto space-y-3 bg-white/80"
+      ></div>
+
+      <!-- Input -->
+      <div class="p-4 border-t border-pink-100 flex gap-2 bg-white">
+        <input
+          type="text"
+          id="chatbotInput"
+          placeholder="Type your message..."
+          class="flex-1 p-3 border border-pink-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm placeholder-pink-400"
+        />
+        <button
+          id="chatbotSend"
+          class="bg-primary text-white p-3 rounded-xl hover:bg-pink-500 transition-colors duration-200 disabled:opacity-50"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chatbot widget -->
+    <div class="fixed bottom-8 right-8 z-50">
+      <button
+        id="chatbotTrigger"
+        class="w-16 h-16 bg-gradient-to-br from-primary to-pink-400 text-white rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="group-hover:rotate-12 transition-transform duration-300"
+        >
+          <path
+            d="M12 3C17.5 3 22 6.58 22 11C22 15.42 17.5 19 12 19C10.76 19 9.57 18.82 8.47 18.5L5.5 21C5.22 21.28 4.78 21.28 4.5 21C4.22 20.72 4.22 20.28 4.5 20L6.71 17.79C4.5 16.28 3 13.78 3 11C3 6.58 7.5 3 12 3M12 17C16.42 17 20 14.31 20 11S16.42 5 12 5 4 7.69 4 11C4 13.17 5.45 15.09 7.71 16.24L8.58 16.8L6.89 18.5L8.11 17.71C9.08 17.89 10.53 18 12 18V17Z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
+
     <!-- Cursor Effect -->
     <div id="cursor-effect" class="fixed pointer-events-none z-50"></div>
     <!-- Scripts -->
     <script src="script.js"></script>
-
-
-
-
   </body>
 </html>

@@ -280,3 +280,120 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+const menuToggle = document.getElementById("menu-toggle");
+const sidebar = document.getElementById("mobile-sidebar");
+const chatbotTrigger = document.getElementById("chatbotTrigger");
+const chatbotPanel = document.getElementById("chatbotPanel");
+const chatbotClose = document.getElementById("chatbotClose");
+const chatbotInput = document.getElementById("chatbotInput");
+const chatbotSend = document.getElementById("chatbotSend");
+const chatbotMessages = document.getElementById("chatbotMessages");
+
+// Toggle sidebar on menu icon click
+menuToggle.addEventListener("click", (e) => {
+  e.stopPropagation(); // Prevent bubbling to document
+  sidebar.classList.toggle("-translate-x-full");
+});
+
+// Close sidebar when clicking outside
+document.addEventListener("click", (e) => {
+  const clickedOutsideSidebar = !sidebar.contains(e.target);
+  const clickedOutsideToggle = !menuToggle.contains(e.target);
+
+  if (clickedOutsideSidebar && clickedOutsideToggle) {
+    sidebar.classList.add("-translate-x-full");
+  }
+});
+
+// Close sidebar when clicking any link inside it
+sidebar.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    sidebar.classList.add("-translate-x-full");
+  });
+});
+
+// Toggle panel
+
+// Open panel
+chatbotTrigger.addEventListener("click", () => {
+  chatbotPanel.classList.remove(
+    "invisible",
+    "opacity-0",
+    "translate-y-4",
+    "scale-95"
+  );
+  chatbotPanel.classList.add("opacity-100", "scale-100", "translate-y-0");
+  chatbotInput.focus();
+});
+
+// Close panel
+chatbotClose.addEventListener("click", () => {
+  chatbotPanel.classList.add(
+    "invisible",
+    "opacity-0",
+    "translate-y-4",
+    "scale-95"
+  );
+  chatbotPanel.classList.remove("opacity-100", "scale-100", "translate-y-0");
+});
+
+// Send on Enter
+chatbotInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    chatbotSend.click();
+  }
+});
+
+// Send message
+chatbotSend.addEventListener("click", () => {
+  const userMessage = chatbotInput.value.trim();
+  if (!userMessage) return;
+
+  // User bubble (right-aligned, soft green-pink tone)
+  const userBubble = document.createElement("div");
+  userBubble.className = "flex justify-end px-2";
+  userBubble.innerHTML = `
+    <div class="bg-pink-100 text-pink-900 p-3 rounded-2xl rounded-br-sm text-sm max-w-[70%] shadow-sm animate-fade-in">
+      ${userMessage}
+    </div>
+  `;
+  chatbotMessages.appendChild(userBubble);
+  chatbotInput.value = "";
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+  // Loader bubble (left-aligned, soft gray-pink tone)
+  const loaderBubble = document.createElement("div");
+  loaderBubble.className = "flex justify-start px-2";
+  loaderBubble.innerHTML = `
+    <div class="bg-white text-gray-600 p-3 rounded-2xl rounded-bl-sm text-sm max-w-[70%] shadow-sm flex items-center gap-2 animate-fade-in">
+      <span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+      <span class="text-xs text-pink-500">Typing...</span>
+    </div>
+  `;
+  chatbotMessages.appendChild(loaderBubble);
+  chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+  // Simulate bot response
+  setTimeout(() => {
+    loaderBubble.remove();
+    const botBubble = document.createElement("div");
+    botBubble.className = "flex justify-start px-2";
+    botBubble.innerHTML = `
+      <div class="bg-white text-gray-800 p-3 rounded-2xl rounded-bl-sm text-sm max-w-[70%] shadow-sm animate-fade-in">
+        You said: <span class="font-medium text-pink-700">"${userMessage}"</span>. This is a dummy response.
+      </div>
+    `;
+    chatbotMessages.appendChild(botBubble);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }, 1000);
+});
+
+// Send on Enter
+chatbotInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    chatbotSend.click();
+  }
+});
